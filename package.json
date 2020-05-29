@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/zazu7765/txtdvntr/issues"
   },
-  "homepage": "https://github.com/zazu7765/txtdvntr#readme"
+  "homepage": "https://github.com/zazu7765/txtdvntr#readme",
+  "dependencies": {
+    "chalk": "^4.0.0",
+    "chalk-animation": "^1.6.0",
+    "prompt-sync": "^4.2.0"
+  }
 }
