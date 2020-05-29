@@ -1,0 +1,19 @@
+{
+  "name": "txtdvntr",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zazu7765/txtdvntr.git"
+  },
+  "author": "ibada",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zazu7765/txtdvntr/issues"
+  },
+  "homepage": "https://github.com/zazu7765/txtdvntr#readme"
+}
