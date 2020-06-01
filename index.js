@@ -1,16 +1,34 @@
 const prompt = require('prompt-sync')({ sigint: true });
 const chalk = require('chalk');
 const animate = require('chalk-animation')
+const cfonts = require('cfonts')
 const log = console.log;
 const dmg = chalk.bold.redBright;
 const win = chalk.bold.greenBright;
 const speak = chalk.yellowBright;
 const choice = chalk.cyanBright;
 const action = chalk.gray;
+var name = ''
+cfonts.say('Untitled RPG', {
+    font: 'simple3d',              // define the font face
+    align: 'left',              // define text alignment
+    colors: ['black','white'],         // define all colors
+    background: 'transparent',  // define the background color, you can also use `backgroundColor` here as key
+    letterSpacing: 2,           // define letter spacing
+    lineHeight: 2,              // define the line height
+    space: true,                // define if the output text should have empty lines on top and on the bottom
+    maxLength: '0',             // define how many character can be on one line
+    gradient: ['green','magenta'],            // define your two gradient colors
+    independentGradient: false, // define if you want to recalculate the gradient for each new line
+    transitionGradient: false,  // define if this is a transition between colors directly
+    env: 'node'                 // define the environment CFonts is being executed in
+});
 //Intro
+cfonts.render("Untitled RPG")
 log("You wake up in a soft bed. Your surroundings appear to be that of a small house, potentially a cottage. Outside, the sky is almost dark, and the sun is setting. Hovering right above you is- \nA Fairy?")
 log(speak("Hello there! My name’s Jasmine! What’s yours?"));
-const name = prompt("Your name: ");
+name = prompt("Your name: ");
+console.clear()
 log(speak(`Welcome to Alivia, ${name}! Do you know how you got here ?
     Oh, you don’t know ? Well, okay then! 
 You don’t know what Alivia is either ?
@@ -34,3 +52,5 @@ if (firstChoice.toLowerCase() === "downstairs"){
     animate.glitch("You must have hit your head pretty hard... you don't know where that is!");
     setTimeout(()=>{log(action("You go downstairs."))},2000);
 }
+
+log("As you go downstairs, you hear the cries and cheers of people. You wonder what they're celebrating.\n\nAs the picture settles into your view, ")

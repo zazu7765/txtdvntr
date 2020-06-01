@@ -17,8 +17,10 @@
   },
   "homepage": "https://github.com/zazu7765/txtdvntr#readme",
   "dependencies": {
+    "cfonts": "^2.8.2",
     "chalk": "^4.0.0",
     "chalk-animation": "^1.6.0",
-    "prompt-sync": "^4.2.0"
+    "prompt-sync": "^4.2.0",
+    "terminal-kit": "^1.35.2"
   }
 }
