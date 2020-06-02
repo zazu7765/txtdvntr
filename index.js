@@ -81,8 +81,8 @@ log(speak("Oh, the owner of the inn found you passed out in the town square last
 log(action("You follow her to the owner of the inn."))
 quit = prompt("Do you want to continue? (Yes or No): ")
 if (quit.toLowerCase() === "yes"){
-    return "You have chosen to continue"
+    return "You have chosen to continue";
 } else{
     log(dmg("You have exited."))
-    return process.exit()
-}
+    return process.exit();
+};
