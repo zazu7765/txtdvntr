@@ -10,24 +10,26 @@ const speak = chalk.yellowBright;
 const choice = chalk.cyanBright;
 const action = chalk.gray;
 // variables
-var name = ''
-var firstChoice = ""
-var secondChoice = ""
+var quit = "";
+var name = "";
+var firstChoice = "";
+var secondChoice = "";
+var thirdChoice = "";
 //functions prints the game title using a cfonts template (node package).
 function printTitle(){
-cfonts.say('Untitled RPG|Demo', {
-    font: 'simple3d',              // define the font face
-    align: 'left',              // define text alignment
-    colors: ['black','white'],         // define all colors
-    background: 'transparent',  // define the background color, you can also use `backgroundColor` here as key
-    letterSpacing: 2,           // define letter spacing
-    lineHeight: 2,              // define the line height
-    space: true,                // define if the output text should have empty lines on top and on the bottom
-    maxLength: '0',             // define how many character can be on one line
-    gradient: ['green','magenta'],            // define your two gradient colors
-    independentGradient: false, // define if you want to recalculate the gradient for each new line
-    transitionGradient: false,  // define if this is a transition between colors directly
-    env: 'node'                 // define the environment CFonts is being executed in
+    cfonts.say('Untitled RPG|Demo', {
+        font: 'simple3d',              // define the font face
+        align: 'left',              // define text alignment
+        colors: ['black','white'],         // define all colors
+        background: 'transparent',  // define the background color, you can also use `backgroundColor` here as key
+        letterSpacing: 2,           // define letter spacing
+        lineHeight: 2,              // define the line height
+        space: true,                // define if the output text should have empty lines on top and on the bottom
+        maxLength: '0',             // define how many character can be on one line
+        gradient: ['green','magenta'],            // define your two gradient colors
+        independentGradient: false, // define if you want to recalculate the gradient for each new line
+        transitionGradient: false,  // define if this is a transition between colors directly
+        env: 'node'                 // define the environment CFonts is being executed in
 });};
 //Title Screen
 printTitle()
@@ -51,7 +53,7 @@ I’ll leave you alone for now!`
 log("As you sit up, you notice your muscles are aching. You probably won’t be moving too much for today. It’s almost completely dark anyways.");
 log(`Looking around the room, you notice a desk with an ornate set of stationery beside the bed. On the opposite side, a closet. The floor was made of wood, probably oak}. The walls were a light beige, with wooden beams running up the sides.`);
 log(choice("Where do you want to go?\n\n Downstairs\n Outside"));
-let firstChoice = prompt("You decide to go: ");
+firstChoice = prompt("You decide to go: ");
 if (firstChoice.toLowerCase() === "downstairs"){
     log(action("You creep out of your room and walk downstairs."))
 } else if (firstChoice.toLowerCase() === "outside"){
@@ -62,7 +64,7 @@ if (firstChoice.toLowerCase() === "downstairs"){
 //choice 2
 log("As you go downstairs, you hear the cries and cheers of people. You wonder what they're celebrating.\n\nAs your eyes adjust to the lighting, you see around 20 people around a series of tables, eating and drinking.\nThey appear to be a group of warriors.");
 log(choice("What do you want to do?\n\n Find someone and ask for help\n Wait in the hallway for someone to help you."));
-let secondChoice = prompt("What do you do? (Ask or Wait): ");
+secondChoice = prompt("What do you do? (Ask or Wait): ");
 if (secondChoice.toLowerCase() === "ask"){
     log(action("You go around the tables and ask some of the warriors if they know who rescued you."));
 } else if (secondChoice.toLowerCase() === "wait"){
@@ -74,3 +76,13 @@ if (secondChoice.toLowerCase() === "ask"){
 log(speak("Hey there!"));
 log(action("A woman in servant's dress has walked up to you."));
 log(speak("Do you need anything?"));
+log(action("You explain your situation."))
+log(speak("Oh, the owner of the inn found you passed out in the town square last week. It's great that you've finally woken up!"))
+log(action("You follow her to the owner of the inn."))
+quit = prompt("Do you want to continue? (Yes or No): ")
+if (quit.toLowerCase() === "yes"){
+    return "You have chosen to continue"
+} else{
+    log(dmg("You have exited."))
+    return process.exit()
+}
