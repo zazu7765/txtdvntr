@@ -63,11 +63,14 @@ log("As you sit up, you notice your muscles are aching. You probably won’t be 
 log(`Looking around the room, you notice a desk with an ornate set of stationery beside the bed. On the opposite side, a closet. The floor was made of wood, probably oak}. The walls were a light beige, with wooden beams running up the sides.`);
 log(choice("Where do you want to go?\n\n Downstairs\n Outside"));
 firstChoice = prompt("You decide to go: ");
-if (firstChoice.toLowerCase() === "downstairs"){
-    log(action("You creep out of your room and walk downstairs."))
+if (firstChoice.toLowerCase() === "downstairs") {
+    console.clear();
+    log(action("You creep out of your room and walk downstairs."));
 } else if (firstChoice.toLowerCase() === "outside"){
+    console.clear();
     log(action("You get off the bed and head for the door. You look down and realize that you don't have any shoes. You decide to go downstairs to see if anyone has some."))
 } else{
+    console.clear();
     log(action("You must have hit your head pretty hard... you don't know where that is!"));
 }
 //choice 2
@@ -75,10 +78,13 @@ log("As you go downstairs, you hear the cries and cheers of people. You wonder w
 log(choice("What do you want to do?\n\n Find someone and ask for help\n Wait in the hallway for someone to help you."));
 secondChoice = prompt("What do you do? (Ask or Wait): ");
 if (secondChoice.toLowerCase() === "ask"){
+    console.clear();
     log(action("You go around the tables and ask some of the warriors if they know who rescued you."));
 } else if (secondChoice.toLowerCase() === "wait"){
+    console.clear();
     log(action("You wait around for an hour or two..."));
 } else{
+    console.clear();
     log(action("There's no other course of action here!"));
     log(action("You decide to wait."));
 }
@@ -90,10 +96,31 @@ log(speak("Oh, the owner of the inn found you passed out in the town square last
 log(action("You follow her to the owner of the inn."))
 quitPrompt()
 console.clear()
+log("You meet a woman that looks suspiciously like the fairy you met earlier, Jasmine.")
 log(speak(`Well, hello there ${name}!`));
 log(dmg("Wait, how do you know my name?"));
 log(speak("Oh, you don't remember me? I'm Jasmine!\n"));
 log(action("You are completely stunned."));
 log(speak("I'm a little special, you'll have to excuse my human form...\n\nFor now though, go to sleep. We'll start on your training tomorrow!"));
 log(action("You head back to your room and go to sleep."))
-quitPrompt()
+quitPrompt();
+console.clear()
+log(action("You wake up in the same room as yesterday evening to the sound of a rooster crowing loudly outside."));
+log(action("There's a note on the bedtable beside you. It reads:\n"));
+log(speak("We're all waiting for you outside. Today's training day!"));
+log("You see clothes and shoes resting on a chair.")
+log(choice("Where do you want to go?\n Downstairs\n Outside"));
+firstChoice = prompt("You go: ")
+if (firstChoice.toLowerCase() === "downstairs") {
+    console.clear();
+    log(action("You creep out of your room, change into proper clothing and walk downstairs."));
+    log("There's a sign on the post next to the dining room. It reads:");
+    log(speak("No food until training is over!"));
+    log(action("You begrudgingly go outside."));
+} else if (firstChoice.toLowerCase() === "outside") {
+    console.clear();
+    log(action("You get off the bed and change into clothes before running outside."))
+} else {
+    console.clear();
+    log(action("You must have hit your head pretty hard... you don't know where that is!\n\nYou go to outside."));
+};
