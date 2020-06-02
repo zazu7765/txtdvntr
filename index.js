@@ -31,6 +31,15 @@ function printTitle(){
         transitionGradient: false,  // define if this is a transition between colors directly
         env: 'node'                 // define the environment CFonts is being executed in
 });};
+function quitPrompt(){
+    quit = prompt("Do you want to continue? (Yes or No): ")
+    if (quit.toLowerCase() === "yes") {
+        log(action("You have chosen to continue"));
+    } else {
+        log(dmg("You have exited."))
+        return process.exit();
+    };
+};
 //Title Screen
 printTitle()
 log("You wake up in a soft bed. Your surroundings appear to be that of a small house, potentially a cottage. Outside, the sky is almost dark, and the sun is setting. Hovering right above you is- \nA Fairy?")
@@ -79,10 +88,12 @@ log(speak("Do you need anything?"));
 log(action("You explain your situation."))
 log(speak("Oh, the owner of the inn found you passed out in the town square last week. It's great that you've finally woken up!"))
 log(action("You follow her to the owner of the inn."))
-quit = prompt("Do you want to continue? (Yes or No): ")
-if (quit.toLowerCase() === "yes"){
-    return "You have chosen to continue";
-} else{
-    log(dmg("You have exited."))
-    return process.exit();
-};
+quitPrompt()
+console.clear()
+log(speak(`Well, hello there ${name}!`));
+log(dmg("Wait, how do you know my name?"));
+log(speak("Oh, you don't remember me? I'm Jasmine!\n"));
+log(action("You are completely stunned."));
+log(speak("I'm a little special, you'll have to excuse my human form...\n\nFor now though, go to sleep. We'll start on your training tomorrow!"));
+log(action("You head back to your room and go to sleep."))
+quitPrompt()
