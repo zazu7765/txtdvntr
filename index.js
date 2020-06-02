@@ -1,14 +1,18 @@
+// packages used
 const prompt = require('prompt-sync')({ sigint: true });
 const chalk = require('chalk');
-const animate = require('chalk-animation')
 const cfonts = require('cfonts')
+// aliases
 const log = console.log;
 const dmg = chalk.bold.redBright;
 const win = chalk.bold.greenBright;
 const speak = chalk.yellowBright;
 const choice = chalk.cyanBright;
 const action = chalk.gray;
+// variables
 var name = ''
+var firstChoice = ""
+var secondChoice = ""
 //functions prints the game title using a cfonts template (node package).
 function printTitle(){
 cfonts.say('Untitled RPG|Demo', {
@@ -67,3 +71,6 @@ if (secondChoice.toLowerCase() === "ask"){
     log(action("There's no other course of action here!"));
     log(action("You decide to wait."));
 }
+log(speak("Hey there!"));
+log(action("A woman in servant's dress has walked up to you."));
+log(speak("Do you need anything?"));
