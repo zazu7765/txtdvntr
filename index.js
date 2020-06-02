@@ -14,8 +14,8 @@ var quit = "";
 var name = "";
 var firstChoice = "";
 var secondChoice = "";
-var thirdChoice = "";
-//functions prints the game title using a cfonts template (node package).
+var weapon = "";
+//functions.
 function printTitle(){
     cfonts.say('Untitled RPG|Demo', {
         font: 'simple3d',              // define the font face
@@ -94,6 +94,7 @@ log(speak("Do you need anything?"));
 log(action("You explain your situation."))
 log(speak("Oh, the owner of the inn found you passed out in the town square last week. It's great that you've finally woken up!"))
 log(action("You follow her to the owner of the inn."))
+//choice 3
 quitPrompt()
 console.clear()
 log("You meet a woman that looks suspiciously like the fairy you met earlier, Jasmine.")
@@ -103,6 +104,7 @@ log(speak("Oh, you don't remember me? I'm Jasmine!\n"));
 log(action("You are completely stunned."));
 log(speak("I'm a little special, you'll have to excuse my human form...\n\nFor now though, go to sleep. We'll start on your training tomorrow!"));
 log(action("You head back to your room and go to sleep."))
+//choice 4
 quitPrompt();
 console.clear()
 log(action("You wake up in the same room as yesterday evening to the sound of a rooster crowing loudly outside."));
@@ -110,6 +112,7 @@ log(action("There's a note on the bedtable beside you. It reads:\n"));
 log(speak("We're all waiting for you outside. Today's training day!"));
 log("You see clothes and shoes resting on a chair.")
 log(choice("Where do you want to go?\n Downstairs\n Outside"));
+//choice 5 but reused first choice variable
 firstChoice = prompt("You go: ")
 if (firstChoice.toLowerCase() === "downstairs") {
     console.clear();
@@ -122,5 +125,39 @@ if (firstChoice.toLowerCase() === "downstairs") {
     log(action("You get off the bed and change into clothes before running outside."))
 } else {
     console.clear();
-    log(action("You must have hit your head pretty hard... you don't know where that is!\n\nYou go to outside."));
+    log(action("You must have hit your head pretty hard... you don't know where that is!\n\nYou go outside."));
 };
+//final choice
+//weapon choice
+log(speak(`Well, ${name}! It's time for you to learn how to survive! It's time to choose your weapon!`));
+log(choice("What weapon do you want to use?\n Sword\n Dagger\n Bow\n Staff\n Axe\n Hammer"));
+weapon = prompt("Your weapon: ");
+switch (weapon.toUpperCase){
+    case 'SWORD':
+        console.clear();
+        log(`Wow! It seems you prefer long blades.`);
+    case 'DAGGER':
+        console.clear();
+        log(`Wow! Future assasin perhaps?`);
+    case 'BOW':
+        console.clear();
+        log(`A Ranger? Interesting...`);
+    case 'STAFF':
+        console.clear();
+        log(`Mage? or MOnk?`);
+    case 'AXE':
+        console.clear();
+        log(`Barbarian it is!`);
+    case 'HAMMER':
+        console.clear();
+        log(`Planning on becoming a carpenter?`)
+};
+log(speak(`Well, what an interesting weapon! Never thought you'd pick a ${weapon}!`));
+log(speak("Time to get practicing!"));
+quitPrompt();
+console.clear();
+//Ending
+printTitle();
+log(dmg("Thank you for playing!\n\nHope you had a good time!"));
+//Arrow function to quit
+setTimeout(()=>{process.exit()},3000)
