@@ -1,2 +1,2 @@
 # txtdvntr
-no longer maintained..
+we shall not speak of this ever again...
